@@ -1,0 +1,18 @@
+# Ignore .DS_Store files created by macOS
+.DS_Store
+
+# Ignore .git directory
+.git
+
+# Ignore node_modules directory (common in JavaScript projects)
+node_modules/
+
+# Ignore build output
+/build/
+
+# Ignore .env files containing sensitive information
+.env
+
+# Ignore log files
+*.log
+
