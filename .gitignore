@@ -2,7 +2,7 @@
 .DS_Store
 
 # Ignore .env files containing sensitive information
-.env
+server/.env
 
 # Ignore log files
 *.log

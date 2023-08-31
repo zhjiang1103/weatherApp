@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 8080;
 //Fetch request to the weather API
 app.get("/weather",(req,res)=>{
   const city=req.query.cityName;
+  console.log("city", city);
   const apiKey= process.env.API_KEY;
   const params= new URLSearchParams({
     q: req.query.cityName,
@@ -36,10 +37,10 @@ app.get('/api', (req, res) => {
   res.json({ message: 'Hello from ExpressJS' });
 });
 
-app.get('/api/myname', (req, res) => {
-    const name={name: "Janet Jiang"};
-    res.json(name);
-  });
+//app.get('/api/myname', (req, res) => {
+   // const name={name: "Janet Jiang"};
+   // res.json(name);
+ // });
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
