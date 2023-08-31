@@ -33,7 +33,7 @@ function App() {
         setCity(city);
         console.log(weather);
         setResult(weather);
-        //console.log(result);
+        console.log(result);
       });
   }
 
