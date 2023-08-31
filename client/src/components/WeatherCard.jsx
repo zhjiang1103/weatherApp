@@ -5,22 +5,22 @@ const WeatherCard = (props) => {
         <div className="weather-card">
             <div className="result">
                 <p>City: <span className="data">
-                    {props.data.data.name}, {props.data.data.sys.country}
+                    {props.name}, {props.sys.country}
                 </span>
                 </p>
                 <p>Description: <span className="data">
-                {props.data.weather[0].description}
+                {props.weather[0].description}
               </span>
             </p>
-            <img src={`http://openweathermap.org/img/wn/${props.data.data.weather[0].icon}@4x.png`} alt={"Icon from Open Weather Api"}/>
+            <img src={`http://openweathermap.org/img/wn/${props.weather[0].icon}@4x.png`} alt={"Icon from Open Weather Api"}/>
             <p>
               Temperature: <span className="data">
-                {props.temp} <sup>o</sup>C
+                {props.main.temp} <sup>o</sup>C
               </span>
             </p>
             <p>
               Feels Like: <span className="data">
-                {props.data.data.main.feels_like} <sup>o</sup>C
+                {props.main.feels_like} <sup>o</sup>C
               </span>
             </p>
 
