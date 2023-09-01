@@ -36,7 +36,7 @@ app.get("/weather",(req,res)=>{
 app.get('/api', (req, res) => {
   res.json({ message: 'Hello from ExpressJS' });
 });
-
+//creates an endpoint for the route /api/myname 
 app.get('/api/myname', (req, res) => {
    const name={name: "Janet Jiang"};
    res.json(name);
