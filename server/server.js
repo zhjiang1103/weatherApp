@@ -37,10 +37,10 @@ app.get('/api', (req, res) => {
   res.json({ message: 'Hello from ExpressJS' });
 });
 
-//app.get('/api/myname', (req, res) => {
-   // const name={name: "Janet Jiang"};
-   // res.json(name);
- // });
+app.get('/api/myname', (req, res) => {
+   const name={name: "Janet Jiang"};
+   res.json(name);
+ });
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
