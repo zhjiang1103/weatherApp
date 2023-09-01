@@ -16,7 +16,7 @@ const WeatherForm = (props) => {
 
     return (
         <div className="weather">
-            <h1 className="App-header">Techtonica Weather Forecast App</h1>
+            <h1 className="App-header"> Weather Forecast App</h1>
             <form onSubmit={handleClick}>
                 <input
                     id="city-name"
