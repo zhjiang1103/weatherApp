@@ -75,11 +75,7 @@ function App() {
         <MyNameButton/>
         {!weatherContent? null:<WeatherCard data={weatherContent} /> }
         
-       {/*<p>{result.main}</p>
-        {result.map((item,index)=>{
-          <p>item.description</p>
-        })}
-       {/*<p>{myname}</p> */}
+       
         </div>
     </>
   )
