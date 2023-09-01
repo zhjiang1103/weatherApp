@@ -6,18 +6,7 @@ import MyNameButton from './components/MyNameButton';
 
 function App() {
 
-  // const [myname, setMyname]=useState('')
-
-  // const callBackEnd = async() =>{
-  //   const response = await fetch('/api/myname')
-  //   const data = await response.json();
-  //   console.log(data);
-  //   setMyname(data.name)
-  // };
-
-  // useEffect(()=>{
-  //   callBackEnd()
-  // },[]);
+  
   
 
   const [city, setCity] = useState("");
@@ -62,9 +51,7 @@ function App() {
   loadCity(city);
  }
 
-//  const handleButtonClick = ()=>{
-//   callBackEnd();
-//  }
+
 
   return (
     <>
