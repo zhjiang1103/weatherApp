@@ -24,6 +24,7 @@ function App() {
   const [result, setResult] = useState(null);
   const [weatherContent, setWeatherContent] = useState(null);
   
+  //Create a weatherContent object to hold information
   const updateWeatherContent = (apiResult) => {
     let weatherObj={};
     weatherObj.city = apiResult.data.name
@@ -44,13 +45,12 @@ function App() {
     fetch(`http://localhost:8080/weather?${params}`)
       .then((response) => response.json())
       .then((result) => {
-        //console.log(result.data.weather)
-        //const weatherData=data.data.weather[0];
+        
         setCity(city);
         console.log(result);
         setResult(result);
         updateWeatherContent(result);
-        //console.log(result);
+    
       });
   }
   useEffect(() => {
