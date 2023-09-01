@@ -10,9 +10,6 @@ const MyNameButton = () => {
     setMyname(data.name)
   };
 
-  // useEffect(()=>{
-  //   callBackEnd()
-  // },[]);
   
   const handleButtonClick = (e) => {
     e.preventDefault();
