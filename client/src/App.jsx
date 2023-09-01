@@ -71,7 +71,7 @@ function App() {
       <div>
         <h1>Hi there!</h1>
         <WeatherForm city={city} handleSubmit={handleSubmit}/>
-        {/*{!result? null:<p>{result.data.weather[0].description}</p> }*/}
+        
         <MyNameButton/>
         {!weatherContent? null:<WeatherCard data={weatherContent} /> }
         
