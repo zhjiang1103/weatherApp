@@ -22,12 +22,26 @@ const WeatherForm = (props) => {
         setUserFav((userFav) => ({...userFav,name }))
     }
 
-    const saveUserCity = () =>{
-
-    }
+    const saveUserCity = (userFav) =>{
+            fetch("http://localhost:8080/api/userfav", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(userFav)
+            })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    //console.log("From the post ", data);
+                    //I'm sending data to the List of Students (the parent) for updating the list
+                    props.onSaveUserFav(data);
+                    //this line just for cleaning the form
+                    //clearForm();
+                });
+        };
+    
 
     const updateUserCity = () =>{
-
     }
 
     return (
