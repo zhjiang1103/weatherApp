@@ -12,6 +12,7 @@ function App() {
   const [city, setCity] = useState("");
   const [result, setResult] = useState(null);
   const [weatherContent, setWeatherContent] = useState(null);
+  const [userFav, setUserFav] = useState([]);
   
   //Create a weatherContent object to hold information
   const updateWeatherContent = (apiResult) => {
@@ -51,13 +52,32 @@ function App() {
   loadCity(city);
  }
 
+ const loadUserFav = () => {
+  // A function to fetch the list of students that will be load anytime that list change
+  fetch("http://localhost:8080/api/userFav")
+      .then((response) => response.json())
+      .then((userFav) => {
+          setUserFav(userFav);
+      });
+}
+
+useEffect(() => {
+  loadUserFav();
+}, []);
+
+
+ const onSaveUserFav = (newUserFav) => {
+  console.log("Inside the post", newUserFav);
+  setUserFav((userFav) => [...userFav, newUserFav]);
+}
+
 
 
   return (
     <>
       <div>
         <h1>Hi there!</h1>
-        <WeatherForm city={city} handleSubmit={handleSubmit}/>
+        <WeatherForm city={city} handleSubmit={handleSubmit} onSaveUserFav={onSaveUserFav}   />
         
         <MyNameButton/>
         {!weatherContent? null:<WeatherCard data={weatherContent} /> }
