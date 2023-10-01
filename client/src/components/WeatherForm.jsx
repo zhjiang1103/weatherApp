@@ -61,11 +61,25 @@ const WeatherForm = (props) => {
 
 
 
-    const updateUserCity = () => {
-         //A function to handle the put request
+    const updateUserCity = (toEditUserFav) => {
+        //A function to handle the put request
+        if (toEditUserFav.id) {
+            fetch(`http://localhost:8080/api/userFav/${toEditUserFav.id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(toEditUserFav)
+            })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    props.onUpdateUserFav(data);
+                    //this line just for cleaning the form
+                    //clearForm();
+                });
 
-       
-    };
+        }
+    }
 
 
     return (
@@ -91,8 +105,8 @@ const WeatherForm = (props) => {
                     required
                 />
                 <input type="submit" value="Submit" />
-                <button type="button" onClick={()=>saveUserCity(userFav)}>Save Favourite City</button>
-                <button type="button" onClick={()=>updateUserCity(userFav)}>Update Favourite City</button>
+                <button type="button" onClick={() => saveUserCity(userFav)}>Save Favourite City</button>
+                <button type="button" onClick={() => updateUserCity(userFav)}>Update Favourite City</button>
             </form>
         </div>
     )

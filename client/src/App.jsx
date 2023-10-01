@@ -3,6 +3,7 @@ import './App.css'
 import WeatherForm from './components/WeatherForm';
 import WeatherCard from './components/WeatherCard';
 import MyNameButton from './components/MyNameButton';
+import UserFavCard from './components/UserFavCard';
 
 function App() {
 
@@ -71,16 +72,27 @@ useEffect(() => {
   setUserFav((userFav) => [...userFav, newUserFav]);
 }
 
+const onUpdateUserFav = (savedUserFav) => {
+  console.log("Inside the put", savedUserFav)
+  setUserFav([...userFav, savedUserFav])
+  //loadUserFav();
+}
 
 
   return (
     <>
       <div>
         <h1>Hi there!</h1>
-        <WeatherForm city={city} handleSubmit={handleSubmit} onSaveUserFav={onSaveUserFav}   />
+        <WeatherForm city={city} handleSubmit={handleSubmit} onSaveUserFav={onSaveUserFav} onUpdateUserFav={onUpdateUserFav}  />
         
         <MyNameButton/>
         {!weatherContent? null:<WeatherCard data={weatherContent} /> }
+        <h1>All UserFav Info</h1>
+            <ul>
+            {userFav.map((user) => {
+                    return <li key={user.id}> <UserFavCard userFav={user} /></li>
+                })}
+            </ul>
         
        
         </div>
